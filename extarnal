@@ -1,0 +1,1595 @@
+Exp. No: Object Oriented Programming with C++
+Roll No: Aditya CollegeOf Engineering Page No:
+Exercise -1 (Classes Objects)
+Create a Distance class with:
+• feet and inches as data members
+• member function to input distance
+• member function to output distance
+• member function to add two distance objects
+1. Write a main function to create objects of DISTANCE class. Input two
+distances and output the sum:
+Aim: To write a main function to create objects of Distance in C++.
+Theory:
+Class:
+In C++, a class is a user-defined data type that defines a blueprint for creating
+objects.
+Object:
+An object is an instance of a class. A class serves as a blueprint for objects,
+defining their attributes (data members) and behaviors (member functions). When a
+class is defined, no memory is allocated but when it is instantiated (i.e., an object is
+created), memory is allocated.
+Class A
+{
+public: int x;
+void show() { }
+};
+int main()
+{
+A obj;
+}
+Exp. No: Object Oriented Programming with C++
+Roll No: Aditya CollegeOf Engineering Page No:
+Program:
+#include<iostream>
+using namespace std;
+class complex
+{
+float r,img;
+public:
+complex()
+{
+r=0;
+img=0;
+}
+complex(float l,float m)
+{
+r=l;
+img=m;
+}
+friend void add(complex c1 ,complex c2,complex c3);
+void add(complex c4,complex c5)
+{
+r=c4.r+c5.r;
+img= c4.img + c5.img;
+cout<<"resultant is:";
+cout <<r <<" +i" <<img;
+}
+void display()
+{
+cout<<"complex number is: ";
+cout<<r <<"+i"<< img<<endl;
+}
+};
+Exp. No: Object Oriented Programming with C++
+Roll No: Aditya CollegeOf Engineering Page No:
+int main()
+{
+complex c1(5.4,2.5);
+complex c2(3.2,5.5);
+complex c3;
+c1.display();
+c2.display();
+c3.add(c1,c2);
+return 0;
+}
+void add(complex c1,complex c2,complex c3)
+{
+c3.r=c1.r+c2.r;
+c3.img=c3.img+c3.img;
+cout << c3.r<<"+" << c3.img;
+}
+OUTPUT:
+Exp. No: Object Oriented Programming with C++
+Roll No: Aditya CollegeOf Engineering Page No:
+2. Write a C++ Program to illustrate the use of Constructors and
+Destructors (use the above program.)
+Aim: To write a C++ Program to illustrate the use of Constructors and
+Destructors.
+Theory: In C++, constructors and destructors are special member functions that
+are automatically called when an object is created and destroyed, respectively.
+Constructor: A constructor is a special member function of a class that is executed
+whenever we create new objects of that class. It has the same name as the class and
+initializes the object members while the object is being created.
+Destructor: A destructor is a special member function of a class that is executed
+whenever an object of its class goes out of scope or whenever the delete expression
+is applied to a pointer to the object of that class. It has the same name as the class
+prefixed with a tilde (~).
+Example:
+class A{
+public: A()
+{
+cout<<”I’m a Constructor”<<endl;
+}
+~A()
+{
+cout<<”I’m a destructor;
+}
+};
+Exp. No: Object Oriented Programming with C++
+Roll No: Aditya CollegeOf Engineering Page No:
+Program:
+#include<iostream> using
+namespace std; class
+complex
+{
+float r,img;
+public:
+complex()
+{
+r=0;
+img=0;
+}
+complex(float l,float m)
+{
+r=l;
+img=m;
+}
+friend void add(complex c1 ,complex c2,complex c3);
+void add(complex c4,complex c5)
+{
+r=c4.r+c5.r;
+img=c4.img+c5.img;
+cout<<"resultant is:";
+cout <<r <<" +i" <<img;
+}
+void display()
+{
+cout<<"complex number is: ";
+cout<<r <<"+i"<< img<<endl;
+}
+~complex()
+{
+cout<<endl<<"Destructor Invoked:\n";
+}
+};
+int main()
+{
+complex c1(5.4,2.5);
+complex c2(3.2,5.5);
+complex c3;
+Exp. No: Object Oriented Programming with C++
+Roll No: Aditya CollegeOf Engineering Page No:
+c1.display();
+c2.display();
+c3.add(c1,c2);
+return 0;
+}
+void add(complex c1,complex c2,complex c3)
+{
+c3.r=c1.r+c2.r;
+c3.img=c3.img+c3.img;
+cout << c3.r<<"+" << c3.img;
+}
+Output:
+Exp. No: Object Oriented Programming with C++
+Roll No: Aditya CollegeOf Engineering Page No:
+3. Write a program for illustrating function overloading in adding the
+distance between objects (use the above problem).
+Aim: To write a program for illustrating function overloading in adding the
+distance between objects.
+Theory: Function overloading in C++ is a feature that allows multiple functions
+with the same name but different parameters. These parameters can differ in
+number, type (such as int, float, etc.), and order of input parameters.
+Function overloading is used to perform one single operation with different number
+or types of arguments. It increases the readability of the program because you don’t
+need to use different names for the same action.
+class A
+{
+public: getx() { }
+int sum(int,int) { }
+float sum(float,float)
+{
+}
+};
+Exp. No: Object Oriented Programming with C++
+Roll No: Aditya CollegeOf Engineering Page No:
+Program:
+#include<iostream>
+using namespace std;
+class complex
+{
+float r,img;
+public:
+complex()
+{
+r=0;
+img=0;
+}
+complex(float l,float m)
+{
+r=l;
+img=m;
+}
+void add(complex c1,complex c2,complex c3)
+{
+c3.r=c1.r+c2.r;
+c3.img=c1.img+c2.img;
+cout << c3.r<<"+" <<c3.img;
+}
+void add(complex c4,complex c5)
+{
+r=c4.r+c5.r;
+img=c4.img+c5.img;
+cout<<"resultant is:";
+cout <<r <<" +i" <<img;
+}
+Exp. No: Object Oriented Programming with C++
+Roll No: Aditya CollegeOf Engineering Page No:
+void display()
+{
+cout<<"complex number is: ";
+cout<<r <<"+i"<< img<<endl;
+}
+};
+int main()
+{
+complex c1(5.4,2.5);
+complex c2(3.2,5.5);
+complex c3;
+c1.display();
+c2.display();
+c3.add(c1,c2);
+return 0;
+}
+Output:
+Exp. No: Object Oriented Programming with C++
+Roll No: Aditya CollegeOf Engineering Page No:
+Exercise – 2 (Access)
+Write a program for illustrating Access Specifiers public, private, protected
+1. Write a program implementing Friend Function
+2. Write a program to illustrate this pointer
+3. Write a Program to illustrate pointer to a class
+1.Write a program implementing Friend Function:
+Aim: To write a program implementing the “Friend’’ Function in C++.
+Theory: A friend function in C++ is a special function that, despite not being a
+member function of a class, has the privilege to access private and protected
+members of the class. It’s declared as a friend using the friend keyword.
+class A
+{
+public: friend void show(){ }
+};
+void show(){ }
+int main()
+{
+return 0;
+}
+Exp. No: Object Oriented Programming with C++
+Roll No: Aditya CollegeOf Engineering Page No:
+Program:
+#include<iostream>
+using namespace std;
+class complex
+{
+private: float r,img;
+public:
+complex()
+{
+r=0;
+img=0;
+}
+complex(float x, float y)
+{
+r=x;
+img=y;
+}
+void display()
+{
+cout<<" Real is: "<<r<<" Imaginary is: "<<img<<endl;
+}
+friend complex operator +(complex,complex);
+};
+complex operator +(complex temp1, complex temp2) {
+}
+int main()
+{
+}
+complex m;
+m.r= temp1.r+ temp2.r;
+m.img = temp1.img +temp2.img;
+return m;
+complex c1(7.5,4.2), c2(8.1,9.3), c3;
+c1.display();
+c2.display();
+c3.display();
+c3 = c1 + c2;
+cout<<" ";
+cout <<"\n After addition\n"<<endl;
+c3.display(); c1.display();
+c2.display();
+return 0;
+Exp. No: Object Oriented Programming with C++
+Roll No: Aditya CollegeOf Engineering Page No:
+OUTPUT:
+Exp. No: Object Oriented Programming with C++
+Roll No: Aditya CollegeOf Engineering Page No:
+2. Write a program to illustrate this pointer:
+Aim: To write a C++ program to illustrate this pointer
+Theory: In C++, “this” pointer is a special keyword that can be used inside a member
+function of a class to refer to the object that called the function. It is an implicit parameter to
+all member functions. Therefore, inside a member function or constructor, “this” may be used
+to refer to the invoking object.
+The “this” pointer holds the address of the current object. For example, consider an object
+obj calling one of its member function say method() as obj.method() . Then, “this” pointer will
+hold the address of object obj inside the member function method().
+It’s important to note that this pointer is not available in static member functions as static
+member functions can be called without any object (with class name).
+Program:
+#include<iostream>
+using namespace std;
+class A
+{
+public:
+char name[20];
+int age;
+public: A()
+{
+cout << "Enter name and age:"<<endl;
+cin>>name;
+cin>>age;
+}
+void display()
+{
+cout<<endl<<"Younger person deatils: ";
+cout <<name;
+cout<<age;
+} A compare(A);
+};
+Exp. No: Object Oriented Programming with C++
+Roll No: Aditya CollegeOf Engineering Page No:
+A A :: compare(A temp)
+{
+cout<<endl<<"Person1 details are:";
+cout<<this->name; cout<<this->age;
+cout<<endl<<"Person2 details are:";
+cout<<temp.name;
+cout<<temp.age;
+if(this->age<temp.age) return *this;
+else return temp;
+}
+int main()
+{
+A p1,p2;
+A yp =p1.compare(p2);
+yp.display();
+return 0;
+}
+OUTPUT:
+Exp. No: Object Oriented Programming with C++
+Roll No: Aditya CollegeOf Engineering Page No:
+3.Write a Program to illustrate pointer to a class:
+Aim: To write a Program to illustrate pointer to a class.
+Theory:
+Pointer is a variable that holds the address of another data variable. The variable
+may be of any data type i.e. int, float or double, char. In same way we can also
+define pointer to a class.
+Example: class
+Book{ char
+name[25]; char
+author[20]; int
+pages; }; class
+book *ptr
+Here *ptr is apointer to ponter to a class book. The syntax for using pointers
+with members is as given below:
+1. ptr->name
+2. ptr->author
+3. ptr->pages
+PROGRAM:
+#include<iostream>
+using namespace std;
+class po
+{
+private: int a,b,c,d;
+public:
+po(int i, int j, int k)
+{
+a=i;
+b=j;
+c=k;
+Exp. No: Object Oriented Programming with C++
+Roll No: Aditya CollegeOf Engineering Page No:
+d=a*b*c;
+}
+void display()
+{
+cout<<"The volume is " <<d;
+}
+};
+int main() {
+po obj(3,3,3);
+po *pc;
+pc = &obj;
+pc->display();
+return 0;
+}
+OUTPUT:
+Exp. No: Object Oriented Programming with C++
+Roll No: Aditya CollegeOf Engineering Page No:
+Exercise -3 (Operator Overloading)
+1. Write a program to Overload Unary, and Binary Operators as Member Function, and
+Non Member Function.
+1. Unary operator as member function
+2. Binary operator as non member function
+2. Write a c ++ program to implement the overloading assignment = operator
+1.Unary operator as member function:
+Aim: To write a C++ program implementing unary operator overloading:
+Theory:
+Unary operator overloading in C++ allows you to define custom behavior for
+operations involving a single object of your class. Unary operators are operators
+that work with a single operand, such as +, -, ++, --, and !. To overload a unary
+operator, you need to define a member function within your class with the
+following format:
+Syntax:
+return_type operator UnaryOperator();
+Program:
+#include<iostream>
+using namespace std;
+class op_overloading
+{
+int x,y;
+public:
+op_overloading()
+{
+x=5;
+y=3;
+}
+op_overloading(int a, int b)
+{
+x=a;
+y=b;
+}
+Exp. No: Object Oriented Programming with C++
+Roll No: Aditya CollegeOf Engineering Page No:
+void display()
+{
+cout<<"X co-ordinate is: "<<x<<endl<<"Y co-ordinate is: "<<y<<endl;
+}
+void operator ++()
+{
+++x;
+++y;
+}
+};
+int main()
+{
+op_overloading c;
+c.display();
+op_overloading d(14,11);
+d.display();
+cout<<" "<<endl;
+cout<<"After unary operator overloading:"<<endl<<endl;
+++c;
+++d;
+c.display();
+d.display();
+return 0;
+}
+OUTPUT:
+Exp. No: Object Oriented Programming with C++
+Roll No: Aditya CollegeOf Engineering Page No:
+2. Binary operator as non member function:
+Theory:
+In C++, you can overload binary operators to define custom behavior for
+operations involving objects of your class. Binary operators are those operators
+that take two operands, such as +, -, *, /, ==, and so on. Here's how you can
+overload a binary operator in C++:
+To overload a binary operator, you need to define a member function or a global
+function that corresponds to the operator. The function should have the
+following format:
+Synatax:
+return_type operator operator_symbol(parameters)
+{
+statement1;
+statement2;
+}
+PROGRAM:
+#include <iostream>
+using namespace std;
+class complex {
+float r, i;
+public:
+complex() {
+r = 0; i = 0;
+}
+complex(float x, float y) {
+r = x; i = y;
+}
+void display() {
+Exp. No: Object Oriented Programming with C++
+Roll No: Aditya CollegeOf Engineering Page No:
+cout << " Real is: " << r << " Imaginary is: " << i << endl;
+}
+friend complex operator +(const complex&, const complex&);
+};
+complex operator +(const complex& temp1, const complex& temp2) {
+complex z;
+z.i = temp1.i + temp2.i;
+z.r = temp1.r + temp2.r;
+return z;
+}
+int main() {
+complex c1;
+c1.display();
+c1 = complex(1.2, 2.5);
+c1.display();
+complex c2(5.1, 3.1);
+c2.display();
+complex c3;
+c3 = c1 + c2;
+c3.display();
+return 0;
+}
+Exp. No: Object Oriented Programming with C++
+Roll No: Aditya CollegeOf Engineering Page No:
+OUTPUT:
+Exp. No: Object Oriented Programming with C++
+Roll No: Aditya CollegeOf Engineering Page No:
+2. Write a c ++ program to implement the overloading assignment
+= operator.
+Theory:
+In C++, you can overload the assignment operator = to define custom
+behavior for object assignment. When you overload the assignment
+operator, you can control how objects of your class are assigned
+values from other objects of the same class. To overload the =
+operator, you need to define a member function within your class with
+the following signature:
+Syntax:
+return_type operator operator_symbol(parameters);
+PROGRAM:
+#include<iostream>
+using namespace std;
+class complex
+{
+float r,i;
+public:
+complex()
+{
+r=0;
+i=0;
+}
+complex(float x, float y)
+{
+r=x;
+i=y;
+}
+void display()
+{
+cout<<r<<"+i"<< i<<endl;
+}
+Exp. No: Object Oriented Programming with C++
+Roll No: Aditya CollegeOf Engineering Page No:
+complex operator +(complex);
+void operator =(const complex &j)
+{
+r = j.r;
+i = j.i;
+}
+};
+complex complex::operator +(complex temp)
+{
+complex z;
+z.i = i + temp.i;
+z.r = r +temp.r;
+return z;
+}
+int main()
+{
+complex c1,c4;
+c1.display();
+c1=complex(1.2, 2.5);
+c1.display();
+complex c2(5.1, 3.1);
+c2.display();
+cout<<"After addition: ";
+complex c3;
+c3 = c1+c2;
+c3.display();
+cout<<"Before assigning: ";
+c4.display();
+cout <<"After assigning: ";
+c4=c3;
+c4.display();
+return 0;
+}
+Exp. No: Object Oriented Programming with C++
+Roll No: Aditya CollegeOf Engineering Page No:
+OUTPUT:
+Exp. No: Object Oriented Programming with C++
+Roll No: Aditya CollegeOf Engineering Page No:
+Exercise -4 (Inheritance)
+1.Write C++ Programs and incorporating various forms of Inheritance
+Single Inheritance Theory:
+Theory:
+When only one class is derived from a single base class, such a derivation of a
+class is known as a single inheritance; further, the derived class is not used as a
+base class. This type of inheritance uses one base and one derived class.
+.
+Program:
+#include <iostream>
+using namespace std;
+class organization{
+public:
+organization()
+{
+cout << "I am the constructor of the base class\n\n";
+}
+};
+class employee: public organization
+Exp. No: Object Oriented Programming with C++
+Roll No: Aditya CollegeOf Engineering Page No:
+{
+public:employee()
+{
+cout << "I am the constructor of the derived class\n\n";
+}
+};
+int main() {
+employee obj;
+return 0;
+}
+Output:
+Exp. No: Object Oriented Programming with C++
+Roll No: Aditya CollegeOf Engineering Page No:
+ii) Hierarchical Inheritance:
+Theory:
+Hierarchical inheritance is a type of inheritance in C++ where multiple derived
+classes inherit from a common base class. In this inheritance hierarchy, each
+derived class shares a common base class but can have its own unique
+properties and methods. It creates a tree-like structure where one base class is
+inherited by multiple derived classes.
+Program:
+#include <iostream>
+using namespace std;
+class Animal { public:
+void eat() {
+cout <<"Animal is eating."<<endl;
+}
+void sleep() {
+cout<<"Animal issleeping."<<endl;
+}
+};
+class Dog : public Animal { public:
+void bark() {
+cout<<"Dog is barking."<<endl;
+}
+};
+Exp. No: Object Oriented Programming with C++
+Roll No: Aditya CollegeOf Engineering Page No:
+class Cat : public Animal { public:
+void meow() {
+cout<<"Cat is meowing."<<endl;
+}
+};
+int main() {
+Dog myDog;
+Cat myCat;
+myDog.eat();
+myDog.sleep();
+myDog.bark();
+myCat.eat();
+myCat.sleep();
+myCat.meow();
+return 0;
+}
+Output:
+Exp. No: Object Oriented Programming with C++
+Roll No: Aditya CollegeOf Engineering Page No:
+iii) Multiple Inheritances:
+Theory:
+Multiple inheritance in C++ allows a class to inherit from more than one
+base class. This means that a derived class can inherit attributes and behaviors
+from multiple parent classes.
+Program:
+#include <iostream>
+using namespace std;
+class Animal { public:
+void eat()
+{
+cout<<"Animal is eating"<<endl;
+}
+};
+class Vehicle
+{
+public: void drive()
+{
+cout<<"Vehicle is driving"<<endl;
+}
+};
+class Hybrid : public Animal, public Vehicle
+{
+public:
+void show()
+{
+cout<<"Hybrid is both an animal and a vehicle"<<endl;
+}
+};
+Exp. No: Object Oriented Programming with C++
+Roll No: Aditya CollegeOf Engineering Page No:
+int main()
+{
+Hybrid hybrid;
+hybrid.eat();
+hybrid.drive();
+hybrid.show();
+return 0;
+}
+Output:
+Exp. No: Object Oriented Programming with C++
+Roll No: Aditya CollegeOf Engineering Page No:
+IV.Multi-level Inheritace:
+Theory:
+Multi-level inheritance in C++ is a type of inheritance in which a derived class
+inherits from a base class and then serves as the base class for another derived
+class. This creates a hierarchical relationship between classes, resulting in a
+multi-level hierarchy.
+Program:
+#include <iostream>
+using namespace std;
+class Vehicle
+{
+public:
+void start()
+{
+cout<<"Vehicle started"<<endl;
+}
+void stop()
+{
+cout<<"Vehicle stopped"<<endl;
+}
+Exp. No: Object Oriented Programming with C++
+Roll No: Aditya CollegeOf Engineering Page No:
+};
+class Car : public Vehicle
+{
+public: void accelerate()
+{
+cout<<"Car is accelerating"<<endl;
+}
+void brake()
+{
+cout<<"Car is braking"<<endl;
+}
+};
+class SportsCar : public Car { public:
+void turbo()
+{
+cout<<"Sports car is in turbo mode"<<endl;
+}
+};
+int main() {
+SportsCar mySportsCar;
+mySportsCar.start();
+mySportsCar.accelerate();
+mySportsCar.turbo();
+mySportsCar.stop();
+return 0;
+}
+Exp. No: Object Oriented Programming with C++
+Roll No: Aditya CollegeOf Engineering Page No:
+Output:
+Exp. No: Object Oriented Programming with C++
+Roll No: Aditya CollegeOf Engineering Page No:
+v) Hybrid inheritance:
+Theory: 
+Hybrid inheritance in C++ is a combination of two or more types of
+inheritance. It often involves a mix of single inheritance (where a class inherits
+from only one base class) and multiple inheritance (where a class inherits from
+more than one base class). One common scenario for hybrid inheritance is when
+a derived class inherits from both a base class and an interface class.
+Program:
+#include<iostream>
+using namespace std;
+class A{ public:
+char ename[10];
+int eid;
+void getid(){
+cout<<"Enter e-name & id: "<<endl;
+cin>>ename>>eid;
+}
+void display()
+{
+cout<<"emp_name: "<<ename<<endl;
+cout<<"emp_id: "<<eid<<endl;
+Exp. No: Object Oriented Programming with C++
+Roll No: Aditya CollegeOf Engineering Page No:
+}
+};
+class B: public virtual A
+{
+public: float esal;
+void getsal(){
+cout<<"Entersalary"<<endl;
+cin>>esal;
+}
+void display()
+{
+cout<<"E-sal is: "<<esal<<endl;
+}
+};
+class C: public virtual A
+{
+public: char cname[5];
+void getcname()
+{
+cout<<"Enter company name: "<<endl;
+cin>> cname;
+}
+void display(){
+cout<<"Company name: "<<endl<<cname<<endl;
+}
+};
+class D: public B, public C
+{
+public: char dept[5];
+void getdep()
+{
+cout<<"Eter deprtment: "<<endl;
+cin>>dept;
+}
+void display()
+{
+cout<<"Department is: "<<endl<<dept;
+}
+Exp. No: Object Oriented Programming with C++
+Roll No: Aditya CollegeOf Engineering Page No:
+};
+int main()
+{
+D ob;
+ob.getid();
+ob.getsal();
+ob.getcname();
+ob.getdep();
+ob.A::display();
+ob.B::display();
+ob.C::display();
+ob.display();
+return 0;
+}
+Output:
+Exp. No: Object Oriented Programming with C++
+Roll No: Aditya CollegeOf Engineering Page No:
+2. Also illustrate the order of execution of constructors and destructors in
+inheritance:
+Aim: To write a C++ program illustrating order of execution of constructors and
+destructors in inheritance.
+Theory: Constructors and destructors play a fundamental role in the context of
+inheritance in C++. They are responsible for the proper initialization and
+cleanup of objects in a class hierarchy. Let's delve into the theory behind
+constructors and destructors in inheritance:
+Program:
+#include<iostream>
+using namespace std;
+class A
+{
+public:
+A()
+{
+cout<<"Adita college: \n";
+}
+~A()
+{
+cout<<"Destructor using inheritance \n";
+}
+};
+class B : public A
+{
+public:
+B(){
+Exp. No: Object Oriented Programming with C++
+Roll No: Aditya CollegeOf Engineering Page No:
+}
+~B(){
+}
+};
+cout<<"Derived class\n";
+cout<<"NOT a BASE CLASS\n";
+int main(){
+B ob;
+return 0;
+}
+Output:
+Exp. No: Object Oriented Programming with C++
+Roll No: Aditya CollegeOf Engineering Page No:
+Exercise – 5
+A) Write a C++ program to illustrate template CLASS
+Aim: To write a C++ program illustrating template CLASS.
+Thoery:
+A template class is a class that is parameterized with one or more types. This
+allows you to create a class that can work with different data types while avoiding
+code duplication.
+Syntax:
+Template Declarartion
+template <class T>
+class name_of_class
+{
+//class data member and functions
+}
+Here first statement template <class T> tells the complier that the following class
+declaration can use the template data type. The T is a variable of template type
+that can be used in the class to define a variable of template type. Both template
+and class are keywords. The < > is used to declare the variables of data type that
+can be used inside the class to define the variables of template type. One or more
+variables can be defined after a comma ‘,’ . But templates can not be defined
+inside the classes or functions and always should be global not local.
+We can instantiate just by writing :
+Exp. No: Object Oriented Programming with C++
+Roll No: Aditya CollegeOf Engineering Page No:
+T k;
+Where ‘k’ is variable of template type.
+Example:
+template <class T1, class T2>
+class data
+{
+};
+int main()
+{
+data <int,float> k(2, 2.2);
+data <int, char> j(4, ‘d’);
+}
+Exp. No: Object Oriented Programming with C++
+Roll No: Aditya CollegeOf Engineering Page No:
+Program:
+#include <iostream>
+using namespace std;
+template<class T>
+class Swapper
+{
+private:
+public:
+T x;
+T y;
+Swapper(T x, T y)
+{
+this->x = x;
+this->y = y;
+}
+void swap()
+{
+T temp = x;
+x = y;
+y = temp;
+}
+void display()
+{
+};
+int main()
+{
+cout<<"After swap x = "<<x<<", y = "<<y<<endl;
+}
+Swapper<int> s1(2, 4);
+s1.swap();
+s1.display();
+Swapper<double> s2(4.2, 6.9);
+s2.swap();
+s2.display();
+return 0;
+}
+Exp. No: Object Oriented Programming with C++
+Roll No: Aditya CollegeOf Engineering Page No:
+Output
+Exp. No: Object Oriented Programming with C++
+Roll No: Aditya CollegeOf Engineering Page No:
+2.write a c++ program to illustrate member function templates.
+Aim: To write a C++ program illustrating member function templates
+Thoery:
+Member function templates allow you to define template functions inside a
+class. This provides a way to write generic member functions that can work
+with different data types. While defining them outside the class the function
+template should define the function, and the template classes are parameterized
+by the type argument.
+Example:
+#include<iostream>
+using namespace std;
+template <class T>
+class data
+{
+public: data(T,c);
+};
+template <class T>
+data<T> :: data(T c)
+{
+Exp. No: Object Oriented Programming with C++
+Roll No: Aditya CollegeOf Engineering Page No:
+cout<<”\n”<<” c=”<<c;
+}
+int main()
+{
+data <char> h(‘A’);
+data <int> i(12);
+return 0;
+}
+Program:
+#include <iostream>
+using namespace std;
+class Adder
+{
+public:
+template<class T1, class T2>
+void add(T1 x, T2 y){ }
+};
+int main()
+{
+cout<<"Sum is: "<<(x+y)<<endl;
+Adder a1;
+a1.add(4, 2);
+Adder a2;
+a2.add(3, 4.7);
+return 0;
+}
+Exp. No: Object Oriented Programming with C++
+Roll No: Aditya CollegeOf Engineering Page No:
+Output
+Exp. No: Object Oriented Programming with C++
+Roll No: Aditya CollegeOf Engineering Page No:
+3.write a c++ program to illustrate Exception handling DIVIDE BY ZERO
+Aim: To write a C++ program illustrating member function templates
+Thoery:
+An exception is an abnormal termination of the program, which is executed in a
+program at run time or it may be called at run time when the error occurs. The
+exception contains warning messages such as invalid argument, insufficient
+memory, and division by zero.
+Handling a "divide by zero" exception involves catching the exception that may
+be thrown when attempting to divide by zero. In C++, you can use a try-catch
+block to handle this situation.
+Program:
+#include <iostream>
+using namespace std;
+int main()
+{
+int a, b;
+cout<<"Enter two integer values: ";
+cin>>a>>b;
+try
+{
+if(b == 0)
+{
+}
+catch(int)
+{
+}
+else
+{
+}
+throw b;
+cout<<(a/b);
+}
+return 0;
+}
+cout<<"Second value cannot be zero";
+Exp. No: Object Oriented Programming with C++
+Roll No: Aditya CollegeOf Engineering Page No:
+Output
+Exp. No: Object Oriented Programming with C++
+Roll No: Aditya CollegeOf Engineering Page No:
+4.write a c++ program to rethrow an exception.
+Aim: To write a C++ program illustrating member function templates
+Thoery: In C++, rethrowing an exception involves catching an exception in one
+part of the code and then using the throw; statement to rethrow that exception,
+allowing it to propagate up the call stack.
+It is also possible to again pass the exception received to another exception
+handler; that is, an exception is thrown from the catch block; this is known as the
+re-throwing exception. The following statement accomplishes this:
+throw;
+The above statement is used without any argument. This statement throws the
+exception caught to the next try catch statement.
+Program:
+#include <iostream>
+using namespace std;
+int main()
+{
+try
+{
+int a, b;
+cout<<"Enter two integer values: ";
+cin>>a>>b;
+try
+{
+if(b == 0)
+{
+}
+else
+{
+throw b;
+cout<<(a/b);
+Exp. No: Object Oriented Programming with C++
+Roll No: Aditya CollegeOf Engineering Page No:
+}
+catch(int)
+{
+}
+catch(...)
+{
+}
+}
+throw; //rethrowing the exception
+}
+Output
+}
+return 0;
+cout<<"Second value cannot be zero";
+Exp. No: Object Oriented Programming with C++
+Roll No: Aditya CollegeOf Engineering Page No:
+Exercise -6
+1. Write a C++ program illustrating user defined string processing functions
+using pointers (string length, string copy, string concatenation)
+2. Write a C++ program illustrating Virtual classes & virtual functions.
+3. Write C++ program that implement Bubble sort, to sort a given list of
+integers in ascending order
+1.Write a C++ program illustrating user defined string processing
+functions using pointers (string length, string copy, string
+concatenation):
+Aim: To write a C++ program illustrating user defined string
+processing functions using pointers (string length, string copy, string
+concatenation).
+String Copy: String involves creating a copy of one string and placing it into
+another string variable.
+Example:
+#include <iostream>
+#include <cstring>
+using namespace std;
+int main() {
+const char* original = "Hello, world!";
+char copied[20];
+strcpy(copied, original);
+cout << "Originalstring: " << original << std::endl;
+cout << "Copied string: " << copied << std::endl;
+return 0;
+}
+Program:
+#include<iostream>
+using namespace std;
+class cpy
+Exp. No: Object Oriented Programming with C++
+Roll No: Aditya CollegeOf Engineering Page No:
+{
+public:
+char s1[20],s2[20];
+char *p=s1,*q=s2;
+void get()
+{
+cout<<"Enter The string = ";
+cin>>s1;
+}
+void cppy()
+{
+while(*p!='\0')
+{
+*q=*p;
+*q++;
+*p++;
+}
+cout<<"Source string ="<<s1<<endl;
+cout<<"Destination string ="<<s2;
+}
+};
+int main()
+{
+cpy ob;
+ob.get();
+ob.cppy();
+return 0;
+}
+Exp. No: Object Oriented Programming with C++
+Roll No: Aditya CollegeOf Engineering Page No:
+OUTPUT:
+String Length: The length of a string is the number of characters it contains.
+The method to obtain the length of a string can vary depending on the
+programming language
+Example
+#include<iostream>
+#include<string>
+using namespace std;
+int main()
+{
+string s1;
+cout<<”\n Length:”<<s1.length();
+s1=’hello’;
+cout<<”\Now length: “<<s1.length();
+return 0;
+}
+Output:
+Length: 0
+Now Length : 5
+Exp. No: Object Oriented Programming with C++
+Roll No: Aditya CollegeOf Engineering Page No:
+Program:
+#include<iostream>
+using namespace std;
+class cpy
+{
+public:
+char s1[20];
+char *p=s1;
+int l=0;
+void gt()
+{
+cout<<"Enter The string = ";
+cin>>s1;
+}
+void copy(){
+while(*p!='\0')
+{
+l++;
+p++;
+}
+cout<<"lenght of the string = "<<l;
+}
+};
+int main(){
+cpy ob;
+ob.gt();
+ob.copy();
+return 0;
+}
+Exp. No: Object Oriented Programming with C++
+Roll No: Aditya CollegeOf Engineering Page No:
+OUTPUT:
+String Concatenation:
+String concatenation refers to the operation of combining two or
+more strings into a single string. The method of concatenating strings
+can vary depending on the programming language.
+Example:
+#include <iostream>
+#include <cstring>
+using namespace std;
+int main() {
+const char* original = "Hello, world!";
+char copied[20];
+strcpy(copied, original);
+cout << "Originalstring: " << original << std::endl;
+cout << "Copied string: " << copied << std::endl;
+return 0;
+}
+Program:
+#include<iostream>
+using namespace std;
+class cat{
+public:
+Exp. No: Object Oriented Programming with C++
+Roll No: Aditya CollegeOf Engineering Page No:
+char s1[20],s2[20]; char
+*p=s1,*q=s2;
+int l;
+void get()
+{
+cout<<"Enter The string1 = ";
+cin>>s1;
+cout<<"Enter The string2 = ";
+cin>>s2;
+cout<<"string1 is = "<<s1;
+cout<<" \nstring2 is = "<<s2;
+}
+void concat(){
+int l=0;
+while(*p!='\0')
+{
+p++;
+}
+*p = ' ';
+*p++;
+while(*q!='\0')
+{
+*p=*q;
+*p++;
+*q++;
+}
+p--;
+cout<<"\nAfter append = "<<s1;
+}
+};
+int main()
+Exp. No: Object Oriented Programming with C++
+Roll No: Aditya CollegeOf Engineering Page No:
+{
+cat ob;
+ob.get();
+ob.concat();
+return 0;
+}
+Output:
+Exp. No: Object Oriented Programming with C++
+Roll No: Aditya CollegeOf Engineering Page No:
+1.Write a C++ program illustrating Virtual classes & virtual
+function.
+Aim: To write a C++ program to illustrating Virtual classes & virtual
+function
+Theory: virtual classes and virtual functions are concepts that allow for
+polymorphism, which is the ability of objects of different types to be treated as
+objects of a common type. This provides flexibility and extensibility to your code.
+Declaration of pure virtual functions
+Virtual void display()=0;
+Rules:
+1. The virtual function should not be static and must not be a member
+function.
+2. May not be declared as friend for another class.
+3. An object pointer cac access the virtual function.
+4. A constructor can not be declared as virtual.
+5. Destructors can be declared as virtual function.
+6. It should be always defined in public section.
+7. It is also possible to return a value from virtual functions similar to
+the other functions.
+8. The operator keyword used for operator overloading also supports
+the virtual mechanism.
+Exaple of a virtual class:
+#include <iostream>
+// Base class
+class Base {
+public:
+virtual void display() {
+std::cout << "Base display()" << std::endl;
+}
+};
+Exp. No: Object Oriented Programming with C++
+Roll No: Aditya CollegeOf Engineering Page No:
+// Derived class
+class Derived : public Base {
+public:
+void display() override {
+std::cout << "Derived display()" << std::endl;
+}
+};
+int main() {
+Base* basePtr;
+Derived derivedObj;
+basePtr = &derivedObj; // Assigning the address of derived class
+object to base class pointer
+// Virtual function call - Resolved at runtime (polymorphism)
+basePtr->display(); // Calls Derived's display() function
+return 0;
+}
+Exp. No: Object Oriented Programming with C++
+Roll No: Aditya CollegeOf Engineering Page No:
+Program:
+#include<iostream>
+using namespace std;
+class Base{
+public: int x;
+virtual void set(int i){
+x=i;
+}
+virtual void display()
+{
+cout<<"X= "<<x;
+}
+};
+class derived1: virtual public Base
+{
+public:
+int y;
+void set(int i)
+{
+y=i;
+}
+void display()
+{
+cout<<"\n y= "<<y;
+}
+};
+int main()
+{
+Base bob, *p;
+p = &bob;
+p->set(15);
+p->display();
+derived1 dob;
+p= &dob;
+p->set(10);
+p->display();
+return 0;
+}
+Exp. No: Object Oriented Programming with C++
+Roll No: Aditya CollegeOf Engineering Page No:
+Output:
+Exp. No: Object Oriented Programming with C++
+Roll No: Aditya CollegeOf Engineering Page No:
+3. Write C++ program that implement Bubble
+sort, to sort a given list of integers in ascending
+order
+Aim: To write a C++ program that implements Bubble sort , to sort a given list
+of integers in ascending order.
+Theory:
+Bubble sort is a simple sorting algorithm that repeatedly steps through the list,
+compares adjacent elements, and swaps them if they are in the wrong order. The
+pass through the list is repeated until the list is sorted.
+Program:
+#include<iostream>
+using namespace std;
+template <class S>
+void b_sort ( S u[] , int k)
+{
+for (int x = 0 ; x < k - 1 ; x++)
+for (int y = k - 1 ;x<y;y--)
+if(u[y] < u[y - 1])
+{
+S p;
+p= u[y];
+u[y]=u[y-1];
+u[y-1]=p;
+}
+}
+int main()
+{
+int i[5] ={4,3,2,1,- 4};
+float f[5] ={5.3, 5.1, 5.5, 4.5, 3.2};
+b_sort (i,5); // call to function
+b_sort (f, 5) ; // call to function
+int x = 0 , y = 0;
+cout<<"\nInteger array elements in ascending order:";
+while (x < 5) cout<<i [x++] <<" "; // display cont
+cout<<"\nFloat array elements in ascending order:";
+while ( y < 5 ) cout<<f[y++]<<" "; // displays// float array
+}
+Exp. No: Object Oriented Programming with C++
+Roll No: Aditya CollegeOf Engineering Page No:
+OUTPUT:
+Exp. No: Object Oriented Programming with C++
+Roll No: Aditya CollegeOf Engineering Page No:
+1. Write a program implementing stack & its operations using
+dynamic memory allocation:
+Program:
+#include<iostream>
+using namespace std;
+struct node
+{
+int data;
+node* link;
+};
+class queue
+{
+private:
+node* front,
+*rear;
+public:
+queue( )
+{
+front = rear = NULL;
+}
+void addq( int item )
+{
+node* temp;
+temp = new node;
+if( temp == NULL )
+cout << endl << "Queue is full";
+temp->data = item;
+temp->link = NULL;
+if( front == NULL )
+{
+rear = front = temp;
+return;
+}
+rear->link = temp;
+rear = rear->link;
+}
+int delq( )
+Exp. No: Object Oriented Programming with C++
+Roll No: Aditya CollegeOf Engineering Page No:
+{
+if( front == NULL )
+{
+cout << endl << "queue is empty";
+return 0;
+}
+node* temp;
+int item;
+item = front->data;
+temp = front;
+front = front->link;
+delete temp;
+return item;
+}
+~queue( )
+{
+if( front == NULL )
+return;
+node * temp;
+while( front != NULL )
+{
+temp = front;
+front = front->link;
+delete temp;
+}
+}
+} ;
+int main( )
+{
+queue a;
+a.addq( 11 );
+a.addq( 12 );
+a.addq( 13 );
+a.addq( 14 );
+a.addq( 15 );
+a.addq( 16 );
+a.addq( 17 );
+int i = a.delq( );
+Exp. No: Object Oriented Programming with C++
+Roll No: Aditya CollegeOf Engineering Page No:
+cout << endl << "Item extracted=" << i;
+i = a.delq( );
+cout << endl << "Item extracted=" << i;
+i = a.delq( );
+cout << endl << "Item extracted=" << i;
+}
+OUTPUT:
+Exp. No: Object Oriented Programming with C++
+Roll No: Aditya CollegeOf Engineering Page No:
+2. Write a program implementing stack and it’s operations using
+template class.
+Program:
+#include <iostream>
+using namespace std;
+const int MAX = 10;
+template<class T>
+class stack
+{
+private:
+T stk[ MAX ];
+int top;
+public: stack( )
+{
+top = -1;
+}
+void push( T data )
+{
+if( top == MAX - 1 )
+cout << endl << "Stack is full";
+else
+{
+top++;
+stk[ top ] = data;
+}
+}
+T pop( )
+{
+if( top == -1 )
+{
+cout << endl << "Stack is empty";
+return NULL;
+}
+else
+{
+T data = stk[ top ];
+top--;
+Exp. No: Object Oriented Programming with C++
+Roll No: Aditya CollegeOf Engineering Page No:
+return data;
+}
+}
+} ;
+class complex
+{
+private:
+float real,
+imag;
+public: complex( float r = 0.0, float i = 0.0 )
+{
+real = r;
+imag = i;
+}
+friend ostream & operator <<( ostream & o, complex & c );
+} ;
+ostream & operator <<( ostream & o, complex & c )
+{
+cout << c.real << "\t" << c.imag;
+return o;
+}
+int main( )
+{
+stack< int > s1;
+s1.push( 10 );
+s1.push( 20 );
+s1.push( 30 );
+cout << endl << s1.pop( );
+cout << endl << s1.pop( );
+cout << endl << s1.pop( );
+stack< float > s2;
+s2.push( 3.14 );
+s2.push( 6.28 );
+s2.push( 8.98 );
+cout << endl << s2.pop( );
+cout << endl << s2.pop( );
+cout << endl << s2.pop( );
+complex c1 ( 1.5, 2.5 ), c2 ( 3.5, 4.5 ),
+c3 ( -1.5, -0.6 );
+Exp. No: Object Oriented Programming with C++
+Roll No: Aditya CollegeOf Engineering Page No:
+OUTPUT:
